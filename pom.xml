@@ -4,13 +4,37 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.phdigitalcode</groupId>
 	<artifactId>carga_planilha</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Carga de Planilha</name>
+	<description>Falicita na carga de planilha excel</description>
+	<url>http://phdigitalcode.com.br</url>
+
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.release>11</maven.compiler.release>
 	</properties>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Phelipp Nascimento</name>
+			<email>phelippnd@gmail.com</email>
+			<organization>PhdigitalCode</organization>
+			<organizationUrl>http://phdigitalcode.com.br</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>
+			scm:git:git@github.com:phelippnd-programador/carga_planilha.git</connection>
+		<developerConnection>
+			scm:git:git@github.com:phelippnd-programador/carga_planilha.git</developerConnection>
+		<url>https://github.com/phelippnd-programador/carga_planilha</url>
+	</scm>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -48,6 +72,61 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.5.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<!-- Configurações adicionais, se necessário -->
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version> <!-- Versão mais recente -->
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
 		</plugins>
 	</build>
 </project>
