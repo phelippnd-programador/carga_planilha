@@ -28,7 +28,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME:phelippnd }}/${{ env.IMAGE_NAME:carga_planilha }}:${{ github.head_ref }}-latest
-            ${{ secrets.DOCKER_HUB_USERNAME:phelippnd }}/${{ env.IMAGE_NAME:carga_planilha }}:${{ github.head_ref | format('yyyyMMddHHmmss') }}
+           phelippnd/carga_planilha:${{ github.head_ref }}-latest
+           phelippnd/carga_planilha:${{ github.head_ref | format('yyyyMMddHHmmss') }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
