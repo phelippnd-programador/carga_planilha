@@ -22,7 +22,7 @@ public class CargaPlanilha<E> {
 	private Sheet sheet;
 	private String nomeAba;
 	private Workbook workbook;
-
+	private String teste="";
 	public CargaPlanilha(Sheet sheet) {
 		cargaInicial(sheet);
 	}
