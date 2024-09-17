@@ -28,7 +28,6 @@ jobs:
           context: .
           push: true
           tags:
-           phelippnd/carga_planilha:${{ github.head_ref }}-latest |
            phelippnd/carga_planilha:${{ github.head_ref}}${{format('yyyyMMddHHmmss') }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
